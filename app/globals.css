@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --radius: 1rem;
+  --background: oklch(0.985 0.012 90);
+  --foreground: oklch(0.25 0.04 350);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.25 0.04 350);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.25 0.04 350);
+  --primary: oklch(0.62 0.22 10);
+  --primary-foreground: oklch(0.99 0.01 90);
+  --secondary: oklch(0.95 0.04 340);
+  --secondary-foreground: oklch(0.3 0.08 350);
+  --muted: oklch(0.96 0.02 90);
+  --muted-foreground: oklch(0.5 0.04 340);
+  --accent: oklch(0.86 0.12 95);
+  --accent-foreground: oklch(0.3 0.08 350);
+  --destructive: oklch(0.6 0.24 25);
+  --destructive-foreground: oklch(0.99 0.01 90);
+  --border: oklch(0.92 0.03 340);
+  --input: oklch(0.92 0.03 340);
+  --ring: oklch(0.7 0.18 10);
+
+  --rose: oklch(0.7 0.2 15);
+  --tulip: oklch(0.78 0.14 340);
+  --sun: oklch(0.85 0.16 90);
+  --leaf: oklch(0.65 0.15 145);
+
+  --gradient-rose: linear-gradient(135deg, oklch(0.95 0.06 15), oklch(0.85 0.14 5));
+  --gradient-tulip: linear-gradient(135deg, oklch(0.95 0.04 320), oklch(0.88 0.1 340));
+  --gradient-sun: linear-gradient(135deg, oklch(0.97 0.06 95), oklch(0.88 0.16 85));
+  --gradient-bloom: linear-gradient(135deg, oklch(0.97 0.04 60), oklch(0.92 0.06 340) 50%, oklch(0.95 0.05 95));
+
+  --shadow-petal: 0 20px 50px -20px oklch(0.62 0.22 10 / 0.35), 0 8px 20px -10px oklch(0.78 0.14 340 / 0.3);
+  --shadow-soft: 0 10px 30px -15px oklch(0.4 0.1 340 / 0.2);
+}
+
+@layer base {
+  html {
+    direction: rtl;
+    scroll-behavior: smooth;
+  }
+  body {
+    background: var(--gradient-bloom);
+    background-attachment: fixed;
+    color: var(--foreground);
+    font-family: "Vazirmatn", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 { letter-spacing: -0.01em; }
+}
+
+@layer utilities {
+  .glass {
+    background: color-mix(in oklab, white 65%, transparent);
+    backdrop-filter: blur(18px) saturate(160%);
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+    border: 1px solid color-mix(in oklab, white 40%, transparent);
+  }
+  .bg-gradient-rose { background: var(--gradient-rose); }
+  .bg-gradient-tulip { background: var(--gradient-tulip); }
+  .bg-gradient-sun { background: var(--gradient-sun); }
+  .bg-gradient-bloom { background: var(--gradient-bloom); }
+  .shadow-petal { box-shadow: var(--shadow-petal); }
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .perspective-card { perspective: 1200px; transform-style: preserve-3d; }
+  .tilt-3d {
+    transition: transform 600ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 600ms;
+    transform-style: preserve-3d;
+  }
+  .tilt-3d:hover { transform: rotateX(6deg) rotateY(-8deg) translateZ(20px) scale(1.03); }
+  .text-gradient {
+    background: linear-gradient(135deg, var(--rose), var(--tulip));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  @keyframes float-y {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-24px) rotate(6deg); }
+  }
+  @keyframes spin-slow { to { transform: rotate(360deg); } }
+  @keyframes pulse-ring {
+    0% { box-shadow: 0 0 0 0 oklch(0.65 0.2 145 / 0.6); }
+    70% { box-shadow: 0 0 0 18px oklch(0.65 0.2 145 / 0); }
+    100% { box-shadow: 0 0 0 0 oklch(0.65 0.2 145 / 0); }
+  }
+  .animate-float { animation: float-y 7s ease-in-out infinite; }
+  .animate-spin-slow { animation: spin-slow 24s linear infinite; }
+  .animate-pulse-ring { animation: pulse-ring 2s infinite; }
+}
