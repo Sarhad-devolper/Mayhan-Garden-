@@ -130,7 +130,7 @@ export const products: Product[] = [
     categoryName: "میخک",
     price: 1250,
     description: "ترکیب رمانتیک میخک‌های صورتی پرپر با رزهای سفید کوچک، بابونه‌های بنفش ریز، گل عروس سفید و برگ‌های اکالیپتوس — بسته‌بندی دو رنگ کرم و صورتی، انتخابی دلنشین برای مادران و عزیزان.",
-    image: "/assets/carnation 2.jpg",
+    image: "/assets/carnation2.jpg",
     tint: "linear-gradient(135deg, oklch(0.97 0.03 90), oklch(0.93 0.06 60))",
   },
   {
