@@ -141,7 +141,7 @@ export const products: Product[] = [
     categoryName: "میخک",
     price: 760,
     description: "دسته‌ای پر و چشم‌نواز از میخک‌های صورتی دو رنگ با لبه‌های کرم، همراه با گل عروس سفید ظریف — بسته‌بندی شیک با کاغذ بنفش یاسی و لایه داخلی نقره‌ای، هدیه‌ای کلاسیک و پرمحبت.",
-    image: "/assets/carnation1.jpg",
+    image: "/assets/carnation3.jpg",
     tint: "linear-gradient(135deg, oklch(0.97 0.03 90), oklch(0.93 0.06 60))",
   },
   {
